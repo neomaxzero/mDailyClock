@@ -1,0 +1,58 @@
+.footer{
+  position:absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+}
+
+.stick-bottom{
+    bottom: 0;
+}
+
+.main{
+  background-color: #FFECA6;
+  color:#2A1C7F;
+}
+
+.fill {
+
+    height: 100vh;
+}
+
+.Aligner {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Aligner-item {
+  max-width: 50%;
+}
+
+.Aligner-item--top {
+  align-self: flex-start;
+}
+
+.Aligner-item--bottom {
+  align-self: flex-end;
+}
+
+#clock{
+  font-size: 10vw;
+}
+
+/*Bootstrap Override*/
+/*.btn.outline {
+	background: none;
+	padding: 12px 22px;
+}
+
+.btn-primary.outline {
+	border: 2px solid #000000;
+	color: #0099cc;
+}
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+	color: #00000;
+	border-color: #ffffff;
+}*/

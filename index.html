@@ -2,9 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hourly Alarm</title>
+    <title>vHour: {{hora.toLocaleTimeString()}}</title>
+
     <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <div class="container-fluid main fill">
@@ -16,9 +18,7 @@
           </h1>
         </div>
       </div>
-      <!-- <div>
-        <input type="button" name="Test" value="Test" @click="playAlarm">
-      </div> -->
+
       <div class="alarmSection" v-show="ringing">
         <div class="row">
           <div class="col-md-12">
@@ -37,26 +37,25 @@
 
 
     </div>
-
-
-  </body>
-  <footer class="footer">
-    <div class="container">
-      <div class="dropup">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <li v-on:click="testAlarm">
-            <a href="#" ><span class ="glyphicon glyphicon-bullhorn"> </span> Test Alarm</a>
-          </li>
-        </ul>
+    <footer class="footer">
+      <div class="container">
+        <div class="dropup">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <li v-on:click="testAlarm">
+              <a href="#" ><span class ="glyphicon glyphicon-bullhorn"> </span> Test Alarm</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.min.js"></script>
-  <script type="text/javascript" src="app.js"></script>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+
 </html>

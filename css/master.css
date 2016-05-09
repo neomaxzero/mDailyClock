@@ -1,3 +1,8 @@
+*{
+  font-family: 'Lato';
+  font-weight: 300;
+}
+
 .footer{
   position:absolute;
   bottom: 0;
@@ -10,6 +15,7 @@
 }
 
 .main{
+
   background-color: #FFECA6;
   color:#2A1C7F;
 }

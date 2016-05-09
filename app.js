@@ -1,17 +1,8 @@
-
-/*var example = {
-  word:"Max!"
-}
-*/
-//var relog; { hora:new Date().toLocaleTimeString()};
-var alarmSound = new Audio('static/alarm.mp3');
-//alarmSound.volume = 0.5;
-
 var relog = {
   hora:new Date(),
   ringing:false
 };
-//Actualiza el relog
+
 setInterval(function(){
   relog.hora =new Date();
   if (relog.hora.getMinutes()==30 && relog.hora.getSeconds()==00) {
@@ -19,6 +10,30 @@ setInterval(function(){
     alarmSound.play();
   }
 },1000)
+/*var example = {
+  word:"Max!"
+}
+*/
+var example = new Date();
+var stringiff = JSON.stringify([{date:example,points:4}]);
+var jsonifyy = JSON.parse(localStorage.db);
+localStorage.setItem('db',stringiff);
+
+var vTitle = new Vue({
+  el:'head',
+  data:relog
+});
+//var relog; { hora:new Date().toLocaleTimeString()};
+var alarmSound = new Audio('static/alarm.mp3');
+//alarmSound.volume = 0.5;
+
+
+//Actualiza el relog
+
+
+var vHistory = new Vue({
+  //
+})
 
 var vClock = new Vue({
   el:'.main',
@@ -71,4 +86,14 @@ var notify= function(text){
       }
     });
   }
+}
+
+
+if(typeof(Storage)!=="undefined")
+{
+    // Son soportados localStorage y sessionStorage
+}
+else
+{
+    // No es soportado el Web Storage
 }

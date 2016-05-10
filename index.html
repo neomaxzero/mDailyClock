@@ -21,15 +21,26 @@
 
       <div class="alarmSection" v-show="ringing">
         <div class="row">
-          <div class="col-md-12">
-              <p class="center-block">
-                 RINGING!!! RINGING!!! RINGING!!! RINGING!!! RINGING!!! RINGING!!! RINGING!!! RINGING!!! RINGING!!! RINGING!!! RINGING!!! RINGING!!! RINGING!!! RINGING!!!RINGING!!! RINGING!!! RINGING!!!
-              </p>
+          <div class="col-md-12 text-center">
+            <p class="center-block"> RINGING!</p>
+              <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default">1</button>
+                <button type="button" class="btn btn-default">2</button>
+                <button type="button" class="btn btn-default">3</button>
+                <button type="button" class="btn btn-default">4</button>
+                <button type="button" class="btn btn-default">5</button>
+                <button type="button" class="btn btn-default">6</button>
+
+              </div>
+
+
           </div>
         </div>
           <div class="row">
             <div class="col-md-12">
-                <input class="center-block" type="button" name="name" value="STOP" v-on:click="stopAlarm">
+
+                <button type="button" class="btn btn-default center-block" v-on:click="stopAlarm">STOP</button>
+
             </div>
           </div>
       </div>

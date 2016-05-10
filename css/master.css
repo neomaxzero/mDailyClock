@@ -48,6 +48,9 @@
   font-size: 10vw;
 }
 
+.row {
+  margin-bottom: 10px;
+}
 /*Bootstrap Override*/
 /*.btn.outline {
 	background: none;

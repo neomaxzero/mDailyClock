@@ -50,6 +50,10 @@ var vClock = new Vue({
       this.ringing = false;
       alarmSound.pause();
       alarmSound.currentTime = 0;
+    },
+    setMood:function(value){
+      this.stopAlarm();
+      console.log(value);
     }
   }
 

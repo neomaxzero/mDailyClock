@@ -51,6 +51,10 @@
 .row {
   margin-bottom: 10px;
 }
+
+.list-group-item{
+  background-color: #2A1C7F;
+}
 /*Bootstrap Override*/
 /*.btn.outline {
 	background: none;

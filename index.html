@@ -3,9 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>vHour: {{hora.toLocaleTimeString()}}</title>
-
-    <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/master.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
   </head>
   <body>
@@ -24,13 +23,7 @@
           <div class="col-md-12 text-center">
             <p class="center-block"> RINGING!</p>
               <div class="btn-group" role="group" aria-label="...">
-                <button type="button" class="btn btn-default">1</button>
-                <button type="button" class="btn btn-default">2</button>
-                <button type="button" class="btn btn-default">3</button>
-                <button type="button" class="btn btn-default">4</button>
-                <button type="button" class="btn btn-default">5</button>
-                <button type="button" class="btn btn-default">6</button>
-
+                <button type="button" v-for="n in 7"  class="btn btn-default" @click="setMood($index)">{{n}}</button>
               </div>
 
 
@@ -44,7 +37,13 @@
             </div>
           </div>
       </div>
-
+      <!-- <div class="container text-center center-block">
+        <ul class="list-group">
+         <li class="list-group-item">First item</li>
+         <li class="list-group-item">Second item</li>
+         <li class="list-group-item">Third item</li>
+        </ul>
+      </div> -->
 
 
     </div>

@@ -53,7 +53,13 @@
 }
 
 .list-group-item{
-  background-color: #2A1C7F;
+  background-color: #FFF3C9;
+  border: 1px solid #D8C06B;
+}
+
+.mood-list{
+  width:40em;
+  margin-top:30px;
 }
 /*Bootstrap Override*/
 /*.btn.outline {

@@ -1,3 +1,14 @@
+
+// Component list
+Vue.component('mood-list-item',{
+  template:'<div class="list-group-item">Test</div>'
+});
+
+Vue.component('mood-list',{
+  template:'<div class="list-group center-block mood-list"><mood-list-item></div>'
+});
+
+
 var relog = {
   hora:new Date(),
   ringing:false
@@ -6,8 +17,7 @@ var relog = {
 setInterval(function(){
   relog.hora =new Date();
   if (relog.hora.getMinutes()==30 && relog.hora.getSeconds()==00) {
-    relog.ringing = true;
-    alarmSound.play();
+    vClock.playAlarm();
   }
 },1000)
 /*var example = {
@@ -15,9 +25,9 @@ setInterval(function(){
 }
 */
 var example = new Date();
-var stringiff = JSON.stringify([{date:example,points:4}]);
-var jsonifyy = JSON.parse(localStorage.db);
-localStorage.setItem('db',stringiff);
+
+
+
 
 var vTitle = new Vue({
   el:'head',
@@ -32,7 +42,17 @@ var alarmSound = new Audio('static/alarm.mp3');
 
 
 var vHistory = new Vue({
-  //
+  el:'.mood-list',
+  data:{pointsStorage:JSON.parse(localStorage.db)},
+  methods:{
+    getPoints:function(){
+      return JSON.parse(localStorage.db);
+    },
+    setPoints:function(myDate,points){
+      var stringiff = JSON.stringify([{date:myDate,points:points}]);
+      localStorage.setItem('db',stringiff);
+    }
+  }
 })
 
 var vClock = new Vue({
@@ -68,6 +88,7 @@ var vSettings = new Vue({
     }
   }
 })
+
 
 var notify= function(text){
   console.log('Notificando');

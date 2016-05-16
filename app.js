@@ -49,7 +49,9 @@ var vHistory = new Vue({
       return JSON.parse(localStorage.db);
     },
     setPoints:function(myDate,points){
-      var stringiff = JSON.stringify([{date:myDate,points:points}]);
+      var localData = this.getPoints();
+      localData.push({date:myDate,points:points});
+      var stringiff = JSON.stringify(localData);
       localStorage.setItem('db',stringiff);
     }
   }
@@ -71,8 +73,10 @@ var vClock = new Vue({
       alarmSound.pause();
       alarmSound.currentTime = 0;
     },
-    setMood:function(value){
+    setMood:function(points){
       this.stopAlarm();
+      var localHr = relog.hora;
+      vHistory.setPoints(localHr,points);
       console.log(value);
     }
   }

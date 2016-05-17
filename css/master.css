@@ -61,6 +61,17 @@
   width:40em;
   margin-top:30px;
 }
+
+.history-panel{
+  max-height: 28em;
+  overflow-y: auto;
+  border:0px;
+  padding: 0;
+}
+
+.no-border{
+  border:0px;
+}
 /*Bootstrap Override*/
 /*.btn.outline {
 	background: none;

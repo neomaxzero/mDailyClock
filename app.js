@@ -1,11 +1,14 @@
 
 // Component list
 Vue.component('mood-list-item',{
-  template:'<div class="list-group-item">Test</div>'
+  template:'<div class="panel panel-primary no-border"><div class="panel-body history-panel"><div class="list-group-item">{{list}}</div></div></div>',
+  props:['list']
+
 });
 
 Vue.component('mood-list',{
-  template:'<div class="list-group center-block mood-list"><mood-list-item></div>'
+  template:'<div class="list-group center-block mood-list"><mood-list-item :list="historyList"></div>',
+  props:['historyList']
 });
 
 
@@ -20,10 +23,7 @@ setInterval(function(){
     vClock.playAlarm();
   }
 },1000)
-/*var example = {
-  word:"Max!"
-}
-*/
+
 var example = new Date();
 
 
@@ -54,6 +54,11 @@ var vHistory = new Vue({
       var stringiff = JSON.stringify(localData);
       localStorage.setItem('db',stringiff);
     }
+  },
+  computed:{
+    history:function(){
+      return this.getPoints()
+    }
   }
 })
 
@@ -77,7 +82,7 @@ var vClock = new Vue({
       this.stopAlarm();
       var localHr = relog.hora;
       vHistory.setPoints(localHr,points);
-      console.log(value);
+      console.log(points);
     }
   }
 

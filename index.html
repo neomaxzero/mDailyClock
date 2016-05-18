@@ -10,6 +10,9 @@
   <body>
     <div class="container-fluid main fill">
 
+      <div class="mainV">
+
+
       <div class="Aligner">
         <div class="Aligner-item ">
           <h1 id="clock">
@@ -31,8 +34,14 @@
         </div>
 
       </div>
-      <mood-list historyList="{{this.history}}"/>
-      
+      </div>
+      <div class="moodList">
+        <mood-list :history-list="history"/>
+      </div>
+
+
+
+
     </div>
 
     <footer class="footer">
@@ -53,7 +62,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="app/core.min.js"></script>
   </body>
 
 </html>

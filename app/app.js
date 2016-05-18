@@ -1,14 +1,14 @@
-
+var moment =require('moment');
+moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
 // Component list
 Vue.component('mood-list-item',{
-  template:'<div class="panel panel-primary no-border"><div class="panel-body history-panel"><div class="list-group-item">{{list}}</div></div></div>',
+  template:'<div class="panel panel-primary no-border"><div class="panel-body history-panel"><div class="list-group-item" v-for="item in list">{{item.date}}</div></div></div>',
   props:['list']
-
-});
+  });
 
 Vue.component('mood-list',{
-  template:'<div class="list-group center-block mood-list"><mood-list-item :list="historyList"></div>',
-  props:['historyList']
+  template:'<div class="list-group center-block"><mood-list-item :list="historyList"/></div>',
+  props:['history-list']
 });
 
 
@@ -16,6 +16,8 @@ var relog = {
   hora:new Date(),
   ringing:false
 };
+
+
 
 setInterval(function(){
   relog.hora =new Date();
@@ -38,32 +40,40 @@ var alarmSound = new Audio('static/alarm.mp3');
 //alarmSound.volume = 0.5;
 
 
-//Actualiza el relog
 
+var dbHistory = {history:[]};
 
 var vHistory = new Vue({
-  el:'.mood-list',
-  data:{pointsStorage:JSON.parse(localStorage.db)},
+  el:'.moodList',
+  data:dbHistory,
   methods:{
     getPoints:function(){
       return JSON.parse(localStorage.db);
+
     },
     setPoints:function(myDate,points){
-      var localData = this.getPoints();
-      localData.push({date:myDate,points:points});
+      var itemToAdd = {date:myDate,points:points}; //Form Object to add
+
+      var localData = this.getPoints();   //Get localStorage items
+      localData.push(itemToAdd);          //Add to localStorage
+
+      this.history.push(itemToAdd);                    //Add to localVariable
+
       var stringiff = JSON.stringify(localData);
       localStorage.setItem('db',stringiff);
     }
   },
-  computed:{
-    history:function(){
-      return this.getPoints()
+  init:function(){
+    if (!localStorage.db) {
+      localStorage.setItem('db','[]');
+      return;
     }
+    dbHistory.history = JSON.parse(localStorage.db);
   }
 })
 
 var vClock = new Vue({
-  el:'.main',
+  el:'.mainV',
   data: relog,
   methods:{
     playAlarm:function(){

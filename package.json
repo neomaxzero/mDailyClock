@@ -1,0 +1,28 @@
+{
+  "name": "mdailyclock",
+  "version": "1.0.0",
+  "description": "Clock to save your mood during your working hours",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neomaxzero/mDailyClock.git"
+  },
+  "keywords": [
+    "clock",
+    "routine",
+    "metric"
+  ],
+  "author": "Cespedes Maximiliano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neomaxzero/mDailyClock/issues"
+  },
+  "homepage": "https://github.com/neomaxzero/mDailyClock#readme",
+  "dependencies": {
+    "moment": "^2.13.0",
+    "webpack": "^1.13.0"
+  }
+}
